@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css"> 
+    <script type="text/javascript" src="jquery-3.7.1.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <title>RentOnGo</title>
+</head>
+<body class="gradient-background dark-mode">
+
+<section class="homebg">
+   <div class="container">
+      <div class="row">
+         <div class="col text-center">
+            <h1 class="home-title">Book Your Vehicle</h1>
+            <p class="home-subtitle">Experience the best rides</p>
+			<a href="Clogin.html" class="btn btn-primary btn-lg home-btn" style="font-weight: bold; color: white;">Book Now</a>
+         </div>
+      </div>
+   </div>
+</section>
+
+<header class="dark-header">
+    <div class="container">
+        <div class="header-content">
+            <div class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            
+            <div class="logo">
+                <span class="logo-text">RentOnGo</span>
+            </div>
+
+            <ul class="navmenu">
+                <li><a href="Rlogin.html">RENTERS</a></li>
+                <li><a href="Dlogin.html">DRIVER</a></li>
+                <li><a href="Alogin.html">ADMIN</a></li>
+                <li><a href="ViewReviews.php">View Reviews</a></li>
+                <li><a href="#footer">ABOUT US</a></li>
+
+            </ul>
+        </div>
+    </div>
+</header>
+
+<footer id="footer">
+    <div class="footer-content">
+        <div class="about-section">
+            <h2>About Us</h2>
+            <p>
+                Welcome to <strong>RentOnGo</strong>! We are dedicated to delivering a seamless and stress-free booking experience, 
+                ensuring reliability, convenience, and customer satisfaction at every step. Whether you're renting a vehicle 
+                or scheduling a service, our platform is designed to provide you with a smooth, efficient, and hassle-free journey. 
+                Thank you for choosing <strong>RentOnGo</strong>--your trusted partner in effortless travel and service bookings!
+            </p>
+        </div>
+        
+        <div class="footer-divider"></div>
+        
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p>Email: <a href="mailto:info@RentOnGo.com">info@RentOnGo.com</a></p>
+            <p>Phone: <a href="#">+94 567 890456</a></p>
+            <p>Address: No.152, Main Street, Galle</p>
+        </div>
+
+        <div class="social-links">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-instagram'></i></a>
+            <a href="#"><i class='bx bxl-linkedin'></i></a>
+        </div>
+
+        <p class="copyright">&copy; 2025 RentOnGo. All rights reserved.</p>
+    </div>
+</footer>
+
+<script>
+    // Toggle mobile menu
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.navmenu');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('.navmenu a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+        });
+    });
+</script>
+</body>
+</html>

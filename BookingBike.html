@@ -1,0 +1,110 @@
+<html>
+<head>
+    <title>RentOnGo Cars</title>
+    <link rel="stylesheet" type="text/css" href="Booking.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-container">
+            <form class="form" action="Booking.php" method="post">
+                <h1>RentOnGo Bike</h1>
+                
+                <!-- Start Date Input -->
+                <label class="lbl">Start Date</label>
+                <input type="date" name="startDate" id="startDate" class="input" required><br><br>
+
+                <!-- End Date Input -->
+                <label class="lbl">End Date</label>
+                <input type="date" name="endDate" id="endDate" class="input" required><br><br>
+
+                <!-- <label class="lbl">Number Of Days Required</label>
+                <input type="text" name="txtDays" id="txtDays" class="input" required><br><br> -->
+                
+                <label class="lbl">Vehicle Type</label>
+                <input type="text" name="txtVehicleType" id="txtVehicleType" readonly class="input"><br><br>
+                
+                <label class="lbl">Payment Method</label>
+                <select name="cmbPayment" id="cmbPayment" class="input" >
+                    <option>Select</option>
+                    <option>Card</option>
+                    <option>Cash</option>
+                </select> <br><br>
+                
+                <input type="button" value="Generate Bill" id="btnBill" class="btn" onclick="Caltotal()">
+                <input type="text" name="txtBill" id="txtBill" readonly class="input"><br>
+                
+                <p class="signup_link">By renting a vehicle from RentOnGo, you agree to the following terms and conditions. The renter must be at least [minimum age] years old and hold a valid driver’s license. The vehicle must be returned in the same condition as received, with the agreed fuel level. The renter is responsible for any fines, tolls, or damages incurred during the rental period. Late returns may result in extra charges. By proceeding, you acknowledge that you have read and agreed to these terms.</p>
+                
+                <input type="checkbox" name="cboxAgree" id="cboxAgree"> Agree with Conditions and Terms <br><br>
+                <input type="submit" name="btnConfirm" value="Confirm Booking" id="btnbook" class="btn" onclick="return validation();">
+
+            </form>
+        </div>
+    </div>
+
+        }
+<script type="text/javascript">
+        function validation() {
+    // Check if a vehicle type is selected
+    if (document.getElementById('cmbVehicleType').selectedIndex == 0) {
+        alert("Please select a valid vehicle type.");
+        return false;  // Stop form submission
+    }
+
+    // Check if a payment method is selected
+    if (document.getElementById('cmbPayment').selectedIndex == 0) {
+        alert("Please select a valid payment method.");
+        return false;  // Stop form submission
+    }
+
+    // Check if terms and conditions checkbox is checked
+    if (!document.getElementById('cboxAgree').checked) {
+        alert("You must agree to the terms and conditions.");
+        return false;  // Stop form submission
+    }
+
+    if (document.getElementById('txtBill').value=="")
+    {
+        alert("Please genater the bill to confirm your booking.");
+        return false;
+    }
+
+    return true;  // Allow form submission if all checks pass
+}
+</script>
+
+    <script type="text/javascript">
+
+        function Caltotal()
+        {
+            if(document.getElementById('startDate').value==""){
+                alert("please select the start date");
+                return;
+            }
+
+            if(document.getElementById('startDate').value==""){
+                alert("please select the end date");
+                return;
+            }
+
+            var startDate = new Date(document.getElementById('startDate').value);
+            var endDate = new Date(document.getElementById('endDate').value);
+
+            
+            // Calculate the difference in days
+            var timeDifferent = endDate.getTime() - startDate.getTime();
+            var Days = Math.ceil(timeDifferent / (1000 * 3600 * 24)); // Convert milliseconds to days
+
+            if (Days <= 0) {
+                alert("End date must be after start date.");
+                return;
+                }
+
+            var Tot = Days * 2500;
+            document.getElementById('txtBill').value = Tot;
+        }
+
+    </script>
+
+</body>
+</html>

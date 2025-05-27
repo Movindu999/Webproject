@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran:wght@400;600&display=swap');
+
+body {
+    font-family: 'Catamaran', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #fffde7);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 900px;
+    width: 100%;
+}
+
+h2 {
+    font-weight: 600;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+/* Form Styling */
+form {
+    animation: slideUpFade 1s ease forwards;
+    border-left: 5px solid #28a745;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@keyframes slideUpFade {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Label Styling */
+label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+/* Inputs & Selects */
+input[type="text"],
+select {
+    font-size: 1.1rem;
+    padding: 14px 18px;
+    border: 1px solid #ced4da;
+    border-radius: 0.6rem;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: #28a745;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+    outline: none;
+}
+
+/* Button Styling */
+button {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 12px 30px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(40, 167, 69, 0.2);
+}
+
+/* Vehicle Table */
+table {
+    margin-top: 40px;
+    animation: fadeInTable 1s ease forwards;
+    border-radius: 10px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+@keyframes fadeInTable {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+thead {
+    background-color: #28a745;
+    color: white;
+}
+
+th, td {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 1.05rem;
+    padding: 14px;
+}
+
+tbody tr:hover {
+    background-color: #f1fdf3;
+    transition: background-color 0.3s ease;
+}
+
+/* Responsive spacing using Bootstrap grid */
+.row > .col-md-4 {
+    margin-bottom: 20px;
+}

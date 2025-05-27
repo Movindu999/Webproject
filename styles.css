@@ -1,0 +1,563 @@
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Catamaran', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.gradient-background {
+    background: linear-gradient(300deg, deepskyblue, #a9d6e5, #89c2d9, #013a63, #2c7da0, #2a6f97);
+    background-size: 360% 360%;
+    animation: gradient-animation 30s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: #ffffff;
+    padding: 1px 0;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+}
+
+/* Text Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #023e8a, #03045e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.logo-text:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 10px rgba(2, 62, 138, 0.2);
+}
+
+/* Hamburger menu styles */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #023e8a;
+    transition: all 0.3s ease;
+}
+
+/* Nav menu styles */
+.navmenu {
+    display: flex;
+    gap: 20px;
+}
+
+.navmenu a {
+    color: #023e8a;
+    font-size: 16px;
+    padding: 15px 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navmenu a:hover {
+    color: #03045e;
+}
+
+.navmenu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 10px;
+    left: 0;
+    background-color: #03045e;
+    transition: width 0.3s ease;
+}
+
+.navmenu a:hover::after {
+    width: 100%;
+}
+
+.navicon {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navicon i {
+    color: #023e8a;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+
+.navicon i:hover {
+    color: #03045e;
+    transform: translateY(-3px);
+}
+
+/* Home Section Styles */
+.homebg {
+    background-image: url('home1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.homebg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.homebg .container {
+    z-index: 2;
+    padding: 20px;
+}
+
+.home-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease;
+}
+
+.home-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1s ease;
+}
+
+.home-btn {
+    padding: 12px 30px !important;
+    font-size: 1.1rem !important;
+    font-weight: 600 !important;
+    border-radius: 50px !important;
+    background-color: #083877 !important;
+    border: none !important;
+    transition: all 0.3s ease !important;
+    animation: fadeIn 1.5s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.home-btn:hover {
+    background-color: #03045e !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(135deg, #165066, #337D8F);
+    color: white;
+    padding: 50px 0 30px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.about-section {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+}
+
+.about-section h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    bottom: -10px;
+    left: 25%;
+    background-color: #a3d8e5;
+}
+
+.about-section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.footer-divider {
+    width: 60%;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin: 30px auto;
+}
+
+.contact-info {
+    margin-bottom: 30px;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.contact-info a {
+    color: #a3d8e5;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.social-links {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    color: #a3d8e5;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    color: white;
+    transform: translateY(-3px);
+}
+
+.copyright {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 992px) {
+    .home-title {
+        font-size: 2.8rem;
+    }
+    
+    .home-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .logo-text {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    
+    .navmenu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column;
+        gap: 0;
+        transition: 0.3s;
+        z-index: 999;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px 0;
+    }
+    
+    .navmenu.active {
+        left: 0;
+    }
+    
+    .navmenu li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+    
+    .navmenu a {
+        padding: 15px;
+        display: block;
+    }
+    
+    .navmenu a::after {
+        display: none;
+    }
+    
+    .home-title {
+        font-size: 2.5rem;
+    }
+    
+    .home-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .about-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .logo-text {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-title {
+        font-size: 2rem;
+    }
+    
+    .home-subtitle {
+        font-size: 1rem;
+    }
+    
+    .home-btn {
+        padding: 10px 25px !important;
+        font-size: 1rem !important;
+    }
+    
+    .about-section h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.3rem;
+    }
+    
+    .social-links {
+        gap: 15px;
+    }
+    
+    .logo-text {
+        font-size: 1.3rem;
+    }
+}
+/* Previous CSS remains the same, add these new styles at the end */
+
+/* Dark Mode Styles */
+.dark-mode .dark-header {
+    background-color: #1a1a1a;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .logo-text {
+    background: linear-gradient(135deg, #48cae4, #90e0ef);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.dark-mode .navmenu a {
+    color: #f8f9fa;
+}
+
+.dark-mode .navmenu a:hover {
+    color: #90e0ef;
+}
+
+.dark-mode .navmenu a::after {
+    background-color: #90e0ef;
+}
+
+.dark-mode .hamburger .bar {
+    background-color: #f8f9fa;
+}
+
+/* Header Layout Adjustments */
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.hamburger {
+    order: 1;
+    display: none; /* Will be shown on mobile */
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.logo {
+    order: 2;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.navmenu {
+    order: 3;
+    display: flex;
+    gap: 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+        order: 1;
+    }
+    
+    .logo {
+        order: 2;
+        text-align: left;
+        flex-grow: 1;
+    }
+    
+    .navmenu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        background-color: #1a1a1a;
+        flex-direction: column;
+        gap: 0;
+        transition: 0.3s;
+        z-index: 999;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+    }
+    
+    .navmenu.active {
+        left: 0;
+    }
+    
+    .navmenu li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+    
+    .navmenu a {
+        padding: 15px;
+        display: block;
+    }
+    
+    .navmenu a::after {
+        display: none;
+    }
+}

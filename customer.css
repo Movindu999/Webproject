@@ -1,0 +1,46 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 70%;
+    margin: 40px auto;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.renter-box {
+    background-color: #eeeeee;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.renter-name {
+    font-size: 18px;
+    color: #333;
+}
+
+.book-btn {
+    background-color: #1a3365;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.book-btn:hover {
+    background-color: #2f4a8a;
+}
